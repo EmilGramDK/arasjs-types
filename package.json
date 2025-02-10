@@ -1,6 +1,6 @@
 {
   "name": "arasjs-types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TypeScript types for Aras Innovator Client-Side API",
   "main": "",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "tsc && node ./build.js",
-    "release": "tsc && node ./build.js && node ./updateVersion.js && cd dist && npm publish && cd .."
+    "release": "tsc && node ./build.js && cd dist && npm publish && cd .."
   },
   "keywords": [
     "aras",
