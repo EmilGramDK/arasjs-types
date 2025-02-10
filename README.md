@@ -7,13 +7,13 @@ ArasJS-Types adds global TypeScript types for the Aras Innovator Client-Side API
 
 ## Get Started
 
-To get started, run the following command: you just have to add this line to your main file in your project:
+To get started, run the following command:
 
 ```sh
 npm i arasjs-types --save-dev
 ```
 
-Import the type reference to your main file in your project:
+Import the types reference to your main file in your project:
 
 ```sh
 /// <reference types="arasjs-types/globals" />
