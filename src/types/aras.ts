@@ -192,7 +192,7 @@ export interface ComponentFormFieldFormat {
 }
 export interface DialogShowResult {
   dialogNode: HTMLElement;
-  promise: Promise<SearchDialogResult | string[]>;
+  promise: Promise<SearchDialogResult | string[] | any>;
 }
 export interface SearchDialogResult {
   itemID: string;
@@ -202,10 +202,15 @@ export interface SearchDialogResult {
 export interface SvgManager {
   load: (icons: string | string[]) => void;
 }
-interface ArasConfirmDialogParameters {
-  title: string;
-  okButtonText?: string;
+export interface ArasConfirmDialogParameters {
+  additionalButtons?: Record<string, unknown>[];
+  cancelButtonModifier?: string;
   cancelButtonText?: string;
+  okButtonModifier?: string;
+  okButtonText?: string;
+  title?: string;
+  image?: string;
+  buttonsOrdering?: string[];
 }
 interface ArasDialogAttachedEventDescriptor {
   node: HTMLElement;

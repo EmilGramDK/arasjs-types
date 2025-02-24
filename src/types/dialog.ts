@@ -21,8 +21,8 @@ export interface SearchDialogOptions {
 
 export interface ArasDialogParameters {
   title: string;
-  type: DialogTypes;
-  itemtypeName: string;
+  type?: DialogTypes;
+  itemtypeName?: string;
   sourceItemTypeName?: string;
   sourcePropertyName?: string;
   multiselect?: boolean;
@@ -31,6 +31,7 @@ export interface ArasDialogParameters {
   dialogHeight?: number;
   classList?: string;
   okButtonText?: string;
+  formId?: string;
 }
 
 export type DialogTypes =
