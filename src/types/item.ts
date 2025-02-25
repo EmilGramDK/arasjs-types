@@ -59,6 +59,7 @@ export interface Item {
   // Methods for manipulating relationships
   addRelationship(item: Item): void;
   appendItem(item: Item): void;
+  removeItem(item: Item): void;
 
   // Cloning
   clone(cloneRelationships: boolean): Item;
@@ -73,11 +74,7 @@ export interface Item {
   // Fetch operations
   fetchDefaultPropertyValues(overwriteCurrent: boolean): Item;
   fetchLockStatus(): number;
-  fetchRelationships(
-    relationshipTypeName: string,
-    selectList?: string,
-    orderBy?: string
-  ): Promise<Item>;
+  fetchRelationships(relationshipTypeName: string, selectList?: string, orderBy?: string): Promise<Item>;
 
   // Get operations
   getAction(): string | null;

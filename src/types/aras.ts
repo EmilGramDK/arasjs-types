@@ -18,13 +18,7 @@ export interface Aras {
   createXMLDocument: () => XmlDocument;
   uiDrawFieldEx: (field: XmlNode, type: unknown, mode: string) => string;
   getItemProperty: (item: XmlNode, property: string, defaultValue?: string | number) => string;
-  getItemByName: (
-    type: string,
-    name: string,
-    levels?: number,
-    configPath?: string,
-    select?: string
-  ) => XmlNode;
+  getItemByName: (type: string, name: string, levels?: number, configPath?: string, select?: string) => XmlNode;
   getUserID: () => string;
   user: ArasUser;
   getMostTopWindowWithAras: (target?: Window) => Window;
@@ -40,20 +34,10 @@ export interface Aras {
   getPermissions: (type: string, itemid: string, itemtype?: string) => boolean;
   setItemProperty: (item: XmlNode, property: string, value: string | XmlNode) => void;
   evalItemMethod: (methodName: string, itemNode: XmlNode, contextParameters: unknown) => void;
-  setItemPropertyAttribute: (
-    item: XmlNode,
-    property: string,
-    attribute: string,
-    value: string | boolean
-  ) => void;
+  setItemPropertyAttribute: (item: XmlNode, property: string, attribute: string, value: string | boolean) => void;
   convertFromNeutral: (value: unknown, datatype: string, format: string) => unknown;
   getItemFromServer: (type: string, id: string, properties: string) => Item;
-  getItemTranslation: (
-    item: XmlNode,
-    property: string,
-    language: string,
-    defaultValue?: string
-  ) => string;
+  getItemTranslation: (item: XmlNode, property: string, language: string, defaultValue?: string) => string;
   uiShowItem: (
     itemTypeName: string,
     itemID: string,
@@ -115,6 +99,24 @@ export interface Aras {
   getServerBaseURL: () => string;
   getServerURL: () => string;
   _getStartURL: () => string;
+
+  /*-- newRelationship
+   *
+   *   Method to create a new Relationship for an item
+   *   relTypeId = the RelatinshpType id
+   *   srcItem   = the source item in the relationship (may be null:i.e. when created with mainMenu)
+   *   searchDialog = true or false : if search dialog to be displayed
+   *   wnd =  the window from which the dialog is opened
+   *
+   */
+  newRelationship: (
+    relTypeId: string,
+    srcItem: XmlNode,
+    searchDialog: boolean,
+    wnd: Window,
+    relatedItem: XmlNode,
+    relatedTypeName: string
+  ) => XmlNode;
 }
 interface Browser {
   isIe: () => false;
@@ -128,11 +130,7 @@ interface ShortcutsHelperFactoryInstance {
 }
 export interface GlobalStore {
   boundActionCreators: {
-    createItemLocalChangesRecord: (
-      itemtype: string,
-      id: string,
-      properties: Record<string, unknown>
-    ) => void;
+    createItemLocalChangesRecord: (itemtype: string, id: string, properties: Record<string, unknown>) => void;
     deleteItemLocalChangesRecord: (itemtype: string, id: string) => void;
   };
   getState: () => {
