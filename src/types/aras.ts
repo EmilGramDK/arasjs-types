@@ -117,6 +117,9 @@ export interface Aras {
     relatedItem: XmlNode,
     relatedTypeName: string
   ) => XmlNode;
+
+  registerEventHandler: (eventName: string, win: Window, handler: any) => void;
+  unregisterEventHandler: (eventName: string, win: Window, handler: any) => void;
 }
 interface Browser {
   isIe: () => false;
