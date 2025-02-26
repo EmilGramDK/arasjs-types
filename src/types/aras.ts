@@ -44,6 +44,17 @@ export interface Aras {
     viewMode?: "tab view" | "openFile",
     isUnfocused?: boolean
   ) => Promise<boolean>;
+
+  /*
+   * uiShowItemEx
+   *
+   * parameters:
+   * 1) itemNd          - item to be shown
+   * 2) viewMode        - 'tab view' or 'openFile'
+   * 3) isOpenInTearOff - true or false
+   */
+  uiShowItemEx: (itemNd: XmlNode, viewMode?: string, isOpenInTearOff?: boolean) => boolean;
+
   confirm: (message: string) => boolean;
   AlertWarning: (message: string) => void;
   AlertError: (error: string | XmlNode | Item | Error) => Promise<void>;
