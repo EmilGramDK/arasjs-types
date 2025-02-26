@@ -33,6 +33,7 @@ export interface Item {
   getErrorDetail: () => string;
   getRelatedItem(): Item | null;
   getRelatedItemID(): string | null;
+  ToString(): string;
 
   /**
    * Creates a new empty Item.
